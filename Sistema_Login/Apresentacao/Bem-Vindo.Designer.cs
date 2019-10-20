@@ -50,6 +50,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Bem_Vindo";
             this.Text = "Bem_Vindo";
+            this.Load += new System.EventHandler(this.Bem_Vindo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

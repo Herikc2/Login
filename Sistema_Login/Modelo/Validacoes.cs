@@ -1,13 +1,7 @@
-﻿using Sistema_Login.Apresentacao;
-using Sistema_Login.Modelo.E_mail;
+﻿using Sistema_Login.Modelo.E_mail;
 using Sistema_Login.Modelo.Senha;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using VerificaForcaSenha.Modelo.Senha;
 
 namespace Sistema_Login.Modelo
 {

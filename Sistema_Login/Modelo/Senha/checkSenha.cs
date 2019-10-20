@@ -1,9 +1,4 @@
 ﻿using Sistema_Login.Apresentacao;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VerificaForcaSenha.Modelo.Senha;
 
 namespace Sistema_Login.Modelo.Senha

@@ -1,14 +1,6 @@
 ﻿using Sistema_Login.Apresentacao;
-using Sistema_Login.DAL;
 using Sistema_Login.Modelo;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Login
@@ -53,12 +45,19 @@ namespace Sistema_Login
                 else
                 {
                     MessageBox.Show("LOGIN NÃO ENCONTRADO", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtSenha.Text = "";
                 }
             }
             else
             {
                 MessageBox.Show(controle.mensagem, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSenha.Text = "";
             }            
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

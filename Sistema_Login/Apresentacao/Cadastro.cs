@@ -1,12 +1,5 @@
 ﻿using Sistema_Login.Modelo;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Login.Apresentacao
@@ -47,6 +40,8 @@ namespace Sistema_Login.Apresentacao
                 MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lblForcaSenha.Text = valueLblForcaSenha;
                 lblPontosSenha.Text = valueLblPontosSenha;
+                txtSenha.Text = "";
+                txtConfSenha.Text = "";
             }
         }
 
