@@ -124,7 +124,7 @@ namespace Sistema_Login.DAL
                         //Abra a conexão com o PgSQL                  
                         con.pgsqlConnection.Open();
 
-                        int workfactor = 14; // 2 ^ (14) = 16.384 iterations.
+                        int workfactor = 10; // 2 ^ (14) = 16.384 iterations.
                         string salt = BCrypt.Net.BCrypt.GenerateSalt(workfactor);
                         string hash = BCrypt.Net.BCrypt.HashPassword(senha, salt);
 

@@ -17,6 +17,14 @@ namespace Sistema_Login.Modelo
             mensagem = new Mensagem();
         }
 
+        public string validaDigitacao(string input, string campo)
+        {
+            if (input.Trim().Equals(""))
+                return "O campo " + campo + " está vazio!";
+            else
+                return "";
+        }
+
         public string generalValidationCadastro(string senha, string confSenha, string email)
         {
             validator = false;
@@ -52,6 +60,14 @@ namespace Sistema_Login.Modelo
             mensagem.adicionaMensagem(tempMensagem);
             clearString();
 
+            tempMensagem = validaDigitacao(senha, "senha");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
+            tempMensagem = validaDigitacao(email, "email");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
             if (!validator)
                 mensagem.clearMensagem();
             return mensagem.msg;
@@ -69,6 +85,16 @@ namespace Sistema_Login.Modelo
         public string validaSenha(string senha, string confSenha)
         {
             checkSenha ckSenha = new checkSenha();
+            string localTemp = "";
+
+            localTemp = validaDigitacao(senha, "senha");
+            if (!localTemp.Equals(""))
+                return localTemp;
+
+            localTemp = validaDigitacao(confSenha, "confirmar senha");
+            if (!localTemp.Equals(""))
+                return localTemp;
+
             if (!ckSenha.equalSenha(senha, confSenha))
                 return "As senhas não correspondem!";
             if (!ckSenha.validaPontuacao(senha))
@@ -81,6 +107,12 @@ namespace Sistema_Login.Modelo
         public string validaEmail(string email)
         {
             checkEmail ckEmail = new checkEmail();
+            string localTemp = "";
+
+            localTemp = validaDigitacao(email, "email");
+            if (!localTemp.Equals(""))
+                return localTemp;
+
             if (!ckEmail.validaEmailEstrutura(email))
                 return "E-mail invalido!";
             if (!checkInput(email))

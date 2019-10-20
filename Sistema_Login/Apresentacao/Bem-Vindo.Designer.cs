@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bem_Vindo));
             this.txtBemVindo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -48,7 +49,9 @@
             this.ClientSize = new System.Drawing.Size(387, 218);
             this.Controls.Add(this.txtBemVindo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Bem_Vindo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bem_Vindo";
             this.Load += new System.EventHandler(this.Bem_Vindo_Load);
             this.ResumeLayout(false);

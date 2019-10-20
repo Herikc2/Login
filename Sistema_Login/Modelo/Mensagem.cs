@@ -12,10 +12,11 @@
 
         public string adicionaMensagem(string input)
         {
-            if (this.msg == "")
-                this.msg = input;
-            else
-                this.msg += "\n" + "- " + input;
+            if(!input.Equals(""))
+                if (this.msg.Equals(""))
+                    this.msg = input;
+                else
+                    this.msg += "\n" + "- " + input;
 
             return msg;
         }

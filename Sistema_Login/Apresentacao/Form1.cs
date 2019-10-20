@@ -21,7 +21,7 @@ namespace Sistema_Login
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             CadastreSe cad = new CadastreSe();
-            cad.Show();
+            cad.ShowDialog();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -32,6 +32,7 @@ namespace Sistema_Login
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             Controle controle = new Controle();
+
             controle.acessar(txtLogin.Text, txtSenha.Text);
 
             if (controle.mensagem.Equals(""))
@@ -40,7 +41,7 @@ namespace Sistema_Login
                 {
                     MessageBox.Show("LOGADO COM SUCESSO", "ENTRANDO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Bem_Vindo bv = new Bem_Vindo();
-                    bv.Show();
+                    bv.ShowDialog();
                 }
                 else
                 {
