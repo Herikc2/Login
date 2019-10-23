@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+
 using Npgsql;
 using Sistema_Login.Modelo;
 
@@ -118,13 +119,13 @@ namespace Sistema_Login.DAL
             if (mensagem.msg == "") // VERIFICA SE O EMAIL JÁ ESTA CADASTRADO
             {
                 try
-                {
+                {                 
                     using (con.pgsqlConnection = new NpgsqlConnection(con.connString))
                     {
                         //Abra a conexão com o PgSQL                  
                         con.pgsqlConnection.Open();
 
-                        int workfactor = 10; // 2 ^ (14) = 16.384 iterations.
+                        int workfactor = 12; // 2 ^ (14) = 16.384 iterations.
                         string salt = BCrypt.Net.BCrypt.GenerateSalt(workfactor);
                         string hash = BCrypt.Net.BCrypt.HashPassword(senha, salt);
 

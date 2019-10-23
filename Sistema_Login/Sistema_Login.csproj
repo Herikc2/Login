@@ -98,15 +98,15 @@
     <Compile Include="Apresentacao\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAL\Conexao.cs" />
-    <Compile Include="DAL\LoginDalComandos.cs" />
+    <Compile Include="DAO\Conexao.cs" />
+    <Compile Include="DAO\LoginDalComandos.cs" />
     <Compile Include="Modelo\Controle.cs" />
-    <Compile Include="Modelo\E-mail\checkEmail.cs" />
+    <Compile Include="Modelo\Validacoes\E-mail\checkEmail.cs" />
     <Compile Include="Modelo\Mensagem.cs" />
-    <Compile Include="Modelo\Senha\CheckPower.cs" />
-    <Compile Include="Modelo\Senha\checkSenha.cs" />
-    <Compile Include="Modelo\Senha\ForcaSenha.cs" />
-    <Compile Include="Modelo\Validacoes.cs" />
+    <Compile Include="Modelo\Validacoes\Senha\CheckPower.cs" />
+    <Compile Include="Modelo\Validacoes\Senha\checkSenha.cs" />
+    <Compile Include="Modelo\Validacoes\Senha\ForcaSenha.cs" />
+    <Compile Include="Modelo\Validacoes\Validacoes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Apresentacao\Bem-Vindo.resx">
