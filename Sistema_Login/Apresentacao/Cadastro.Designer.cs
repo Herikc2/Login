@@ -38,13 +38,18 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.lblForcaSenha = new System.Windows.Forms.Label();
             this.lblPontosSenha = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(106, 19);
+            this.lblLogin.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblLogin.Location = new System.Drawing.Point(113, 59);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(50, 19);
             this.lblLogin.TabIndex = 0;
@@ -54,7 +59,8 @@
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(107, 77);
+            this.lblSenha.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblSenha.Location = new System.Drawing.Point(114, 127);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(48, 19);
             this.lblSenha.TabIndex = 1;
@@ -65,7 +71,8 @@
             // 
             this.lblConfSenha.AutoSize = true;
             this.lblConfSenha.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfSenha.Location = new System.Drawing.Point(74, 146);
+            this.lblConfSenha.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblConfSenha.Location = new System.Drawing.Point(81, 196);
             this.lblConfSenha.Name = "lblConfSenha";
             this.lblConfSenha.Size = new System.Drawing.Size(115, 19);
             this.lblConfSenha.TabIndex = 2;
@@ -75,7 +82,7 @@
             // txtLogin
             // 
             this.txtLogin.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin.Location = new System.Drawing.Point(56, 41);
+            this.txtLogin.Location = new System.Drawing.Point(63, 82);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(151, 23);
             this.txtLogin.TabIndex = 3;
@@ -83,7 +90,7 @@
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(56, 109);
+            this.txtSenha.Location = new System.Drawing.Point(63, 150);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(151, 23);
@@ -92,7 +99,7 @@
             // 
             // txtConfSenha
             // 
-            this.txtConfSenha.Location = new System.Drawing.Point(56, 178);
+            this.txtConfSenha.Location = new System.Drawing.Point(63, 219);
             this.txtConfSenha.Name = "txtConfSenha";
             this.txtConfSenha.PasswordChar = '*';
             this.txtConfSenha.Size = new System.Drawing.Size(151, 20);
@@ -101,9 +108,11 @@
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
+            this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrar.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnCadastrar.Location = new System.Drawing.Point(56, 226);
+            this.btnCadastrar.Location = new System.Drawing.Point(63, 267);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(151, 49);
             this.btnCadastrar.TabIndex = 6;
@@ -115,10 +124,10 @@
             // 
             this.lblForcaSenha.AutoSize = true;
             this.lblForcaSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblForcaSenha.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForcaSenha.Location = new System.Drawing.Point(214, 77);
+            this.lblForcaSenha.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblForcaSenha.Location = new System.Drawing.Point(217, 127);
             this.lblForcaSenha.Name = "lblForcaSenha";
-            this.lblForcaSenha.Size = new System.Drawing.Size(0, 19);
+            this.lblForcaSenha.Size = new System.Drawing.Size(0, 17);
             this.lblForcaSenha.TabIndex = 7;
             this.lblForcaSenha.Click += new System.EventHandler(this.lblForcaSenha_Click);
             // 
@@ -126,18 +135,42 @@
             // 
             this.lblPontosSenha.AutoSize = true;
             this.lblPontosSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPontosSenha.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPontosSenha.Location = new System.Drawing.Point(215, 109);
+            this.lblPontosSenha.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPontosSenha.Location = new System.Drawing.Point(221, 150);
             this.lblPontosSenha.Name = "lblPontosSenha";
-            this.lblPontosSenha.Size = new System.Drawing.Size(0, 19);
+            this.lblPontosSenha.Size = new System.Drawing.Size(0, 15);
             this.lblPontosSenha.TabIndex = 8;
             this.lblPontosSenha.Click += new System.EventHandler(this.lblPontosSenha_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 45);
+            this.panel1.TabIndex = 9;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(258, 8);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnExit.TabIndex = 1;
+            this.btnExit.TabStop = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // CadastreSe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 287);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.ClientSize = new System.Drawing.Size(300, 340);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblPontosSenha);
             this.Controls.Add(this.lblForcaSenha);
             this.Controls.Add(this.btnCadastrar);
@@ -147,12 +180,14 @@
             this.Controls.Add(this.lblConfSenha);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblLogin);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastreSe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
             this.Load += new System.EventHandler(this.CadastreSe_Load);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +204,7 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label lblForcaSenha;
         private System.Windows.Forms.Label lblPontosSenha;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox btnExit;
     }
 }

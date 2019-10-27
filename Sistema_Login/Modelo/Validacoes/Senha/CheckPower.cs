@@ -65,13 +65,13 @@ namespace VerificaForcaSenha.Modelo.Senha
         {
             int placar = geraPontosSenha(senha);
 
-            if (placar < 60)
+            if (placar < 50)
                 return ForcaDaSenha.Inaceitavel;
-            else if (placar < 70)
+            else if (placar < 60)
                 return ForcaDaSenha.Fraca;
-            else if (placar < 90)
+            else if (placar < 75)
                 return ForcaDaSenha.Aceitavel;
-            else if (placar < 110)
+            else if (placar < 100)
                 return ForcaDaSenha.Forte;
             else
                 return ForcaDaSenha.Segura;

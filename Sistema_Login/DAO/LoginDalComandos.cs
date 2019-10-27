@@ -40,7 +40,8 @@ namespace Sistema_Login.DAL
 
                         if (dt.Rows.Count > 0)
                         {
-                            string hash = dt.Rows[0]["senha"].ToString();
+                            string hash = dt.Rows[0]["senha"].ToString();         
+                            
                             if (BCrypt.Net.BCrypt.Verify(pass, hash.TrimEnd()))
                             {
                                 tem = true;
@@ -116,7 +117,7 @@ namespace Sistema_Login.DAL
             //comandos SQL para inserir no BD
             mensagem.msg = valida.generalValidationCadastro(senha, confSenha, email); // Validações
 
-            if (mensagem.msg == "") // VERIFICA SE O EMAIL JÁ ESTA CADASTRADO
+            if (mensagem.msg == "") 
             {
                 try
                 {                 
