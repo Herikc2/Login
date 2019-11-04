@@ -1,5 +1,8 @@
-﻿using Sistema_Login.DAL;
+﻿using Sistema_Login.Apresentacao;
+using Sistema_Login.DAL;
 using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace Sistema_Login.Modelo
 {
@@ -13,7 +16,7 @@ namespace Sistema_Login.Modelo
             LoginDalComandos loginDal = new LoginDalComandos();
             tem = loginDal.verificarLogin(login, senha);
 
-            if (!loginDal.mensagem.msg.Equals(""))           
+            if (!loginDal.mensagem.msg.Equals(""))
                 this.mensagem = loginDal.mensagem.msg;
 
             return tem;
@@ -28,6 +31,62 @@ namespace Sistema_Login.Modelo
                 this.tem = true;
 
             return mensagem;
+        }
+
+        public DataTable atualizarExibicao()
+        {
+            LoginDalComandos loginDal = new LoginDalComandos();
+
+            return loginDal.GetTodosRegistros();
+        }
+
+        public String inserirPessoa(RadioButton masc, RadioButton fem, RadioButton oth, String txtNomeFiltro, String txtEmailFiltro, String txtCpf)
+        {
+            LoginDalComandos loginDal = new LoginDalComandos();
+
+            String sexo = "";
+            if (masc.Checked)
+                sexo = "F";
+
+            if (fem.Checked)
+                sexo = "M";
+
+            if (oth.Checked)
+                sexo = "O";
+
+            return loginDal.InserirRegistros(txtNomeFiltro, txtEmailFiltro, txtCpf, sexo);
+        }
+
+        public String deletarPessoa(String CPF)
+        {
+            LoginDalComandos loginDal = new LoginDalComandos();
+
+            return loginDal.DeletarRegistro(CPF);
+        }
+
+        public DataTable filtrarPessoa(RadioButton masc, RadioButton fem, RadioButton oth, String txtNomeFiltro, String txtEmailFiltro, String txtCpf)
+        {
+            LoginDalComandos loginDal = new LoginDalComandos();
+
+            String sexo = "";
+            if (masc.Checked)
+                sexo = "F";
+
+            if (fem.Checked)
+                sexo = "M";
+
+            if (oth.Checked)
+                sexo = "O";
+
+            return loginDal.GetTodosRegistrosFiltrados(txtNomeFiltro, txtEmailFiltro, txtCpf, sexo);
+        }
+
+        public String about(String cpf)
+        {
+           
+            LoginDalComandos loginDal = new LoginDalComandos();
+            
+            return loginDal.requisicaoHTTP(cpf);  
         }
     }
 }

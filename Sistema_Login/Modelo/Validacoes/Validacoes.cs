@@ -2,8 +2,9 @@
 using Sistema_Login.Modelo.Senha;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
-namespace Sistema_Login.Modelo
+namespace Sistema_Login.Modelo.Validacoes
 {
     class Validacoes
     {
@@ -17,12 +18,56 @@ namespace Sistema_Login.Modelo
             mensagem = new Mensagem();
         }
 
-        public string validaDigitacao(string input, string campo)
+        public string generalValidationFormPessoa(String nome, String cpf, String email, String sexo, bool needValidationCPF)
         {
-            if (input.Trim().Equals(""))
-                return "O campo " + campo + " está vazio!";
-            else
-                return "";
+            validator = false;
+            tempMensagem = "";
+
+            mensagem.adicionaMensagem("O formulário possui as seguintes invalidações:");
+
+            tempMensagem = checkInputMessage(nome, "nome");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
+            tempMensagem = checkInputMessage(cpf, "cpf");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
+            tempMensagem = checkInputMessage(email, "email");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
+            tempMensagem = checkInputMessage(sexo, "sexo");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
+            tempMensagem = validaDigitacao(nome, "nome");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
+            tempMensagem = validaDigitacao(cpf, "cpf");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
+            tempMensagem = validaDigitacao(email, "email");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
+            tempMensagem = validaDigitacao(sexo, "sexo");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
+            if (needValidationCPF) {
+                validaCPF cpfValidation = new validaCPF();
+                tempMensagem = cpfValidation.generalValidationCPF(cpf);
+                mensagem.adicionaMensagem(tempMensagem);
+                clearString();
+            }
+
+            if (!validator)
+                mensagem.clearMensagem();
+
+            return mensagem.msg;
         }
 
         public string generalValidationCadastro(string senha, string confSenha, string email)
@@ -42,6 +87,35 @@ namespace Sistema_Login.Modelo
 
             if (!validator)
                 mensagem.clearMensagem();
+            return mensagem.msg;
+        }
+
+        public string generalValidatioFiltro(String nome, String email, String cpf, String sexo)
+        {
+            validator = false;
+            tempMensagem = "";
+
+            mensagem.adicionaMensagem("O formulário possui as seguintes invalidações:");
+
+            tempMensagem = checkInputMessage(nome, "nome");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
+            tempMensagem = checkInputMessage(cpf, "cpf");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
+            tempMensagem = checkInputMessage(email, "email");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
+            tempMensagem = checkInputMessage(sexo, "sexo");
+            mensagem.adicionaMensagem(tempMensagem);
+            clearString();
+
+            if (!validator)
+                mensagem.clearMensagem();
+
             return mensagem.msg;
         }
 
@@ -82,6 +156,13 @@ namespace Sistema_Login.Modelo
             }
         }
 
+        public String validaCampoFiltro(String input)
+        {
+            if ("".Equals(input) || input == null)
+                input = "%%";
+            return input;
+        }
+
         public string validaSenha(string senha, string confSenha)
         {
             checkSenha ckSenha = new checkSenha();
@@ -120,6 +201,14 @@ namespace Sistema_Login.Modelo
             return "";
         }
 
+        public string validaDigitacao(string input, string campo)
+        {
+            if (input.Trim().Equals(""))
+                return "O campo " + campo + " está vazio!";
+            else
+                return "";
+        }
+
         public bool checkInput(String input)
         {
             List<String> lixo = new List<String>();
@@ -136,7 +225,11 @@ namespace Sistema_Login.Modelo
             lixo.Add("table");
 
             for (int i = 0; i < lixo.Count; i++)
-                textoOK = textoOK.Replace(lixo[i], "");
+            {
+                var regex = new Regex(lixo[i], RegexOptions.IgnoreCase);
+                textoOK = regex.Replace(textoOK, "");
+            }
+            //Regex.Replace(textoOK, lixo[i], "", RegexOptions.IgnoreCase);
 
             if (input.Equals(textoOK)) return true;
             else return false;

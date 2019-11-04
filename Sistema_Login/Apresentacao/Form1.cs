@@ -30,7 +30,7 @@ namespace Sistema_Login
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
-        {
+        {          
             Controle controle = new Controle();
 
             controle.acessar(txtLogin.Text, txtSenha.Text);
