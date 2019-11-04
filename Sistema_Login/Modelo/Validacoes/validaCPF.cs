@@ -1,9 +1,4 @@
-﻿using Sistema_Login.DAL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Sistema_Login.Modelo.Validacoes
 {
@@ -14,7 +9,6 @@ namespace Sistema_Login.Modelo.Validacoes
        public String generalValidationCPF(String CPF)
         {
             Validacoes valida = new Validacoes();
-            LoginDalComandos loginDal = new LoginDalComandos();
             String tempMensagem = "";
 
             tempMensagem = valida.checkInputMessage(CPF, "CPF");

@@ -13,11 +13,6 @@ namespace Sistema_Login
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             CadastreSe cad = new CadastreSe();
@@ -54,11 +49,6 @@ namespace Sistema_Login
                 MessageBox.Show(controle.mensagem, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSenha.Text = "";
             }            
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)

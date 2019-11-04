@@ -1,7 +1,7 @@
 ﻿using System;
 using Npgsql;
 
-namespace Sistema_Login.DAL
+namespace Sistema_Login.DAO
 {
     public class Conexao
     {

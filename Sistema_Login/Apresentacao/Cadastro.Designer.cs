@@ -65,7 +65,6 @@
             this.lblSenha.Size = new System.Drawing.Size(48, 19);
             this.lblSenha.TabIndex = 1;
             this.lblSenha.Text = "Senha";
-            this.lblSenha.Click += new System.EventHandler(this.lblSenha_Click);
             // 
             // lblConfSenha
             // 
@@ -77,7 +76,6 @@
             this.lblConfSenha.Size = new System.Drawing.Size(115, 19);
             this.lblConfSenha.TabIndex = 2;
             this.lblConfSenha.Text = "Confirmar Senha";
-            this.lblConfSenha.Click += new System.EventHandler(this.lblConfSenha_Click);
             // 
             // txtLogin
             // 
@@ -95,7 +93,6 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(151, 23);
             this.txtSenha.TabIndex = 4;
-            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // txtConfSenha
             // 
@@ -129,7 +126,6 @@
             this.lblForcaSenha.Name = "lblForcaSenha";
             this.lblForcaSenha.Size = new System.Drawing.Size(0, 17);
             this.lblForcaSenha.TabIndex = 7;
-            this.lblForcaSenha.Click += new System.EventHandler(this.lblForcaSenha_Click);
             // 
             // lblPontosSenha
             // 
@@ -140,7 +136,6 @@
             this.lblPontosSenha.Name = "lblPontosSenha";
             this.lblPontosSenha.Size = new System.Drawing.Size(0, 15);
             this.lblPontosSenha.TabIndex = 8;
-            this.lblPontosSenha.Click += new System.EventHandler(this.lblPontosSenha_Click);
             // 
             // panel1
             // 
@@ -185,7 +180,6 @@
             this.Name = "CadastreSe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
-            this.Load += new System.EventHandler(this.CadastreSe_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);

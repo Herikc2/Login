@@ -1,5 +1,5 @@
 ﻿using Sistema_Login.Apresentacao;
-using Sistema_Login.DAL;
+using Sistema_Login.DAO;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -13,21 +13,21 @@ namespace Sistema_Login.Modelo
 
         public bool acessar(String login, String senha)
         {
-            LoginDalComandos loginDal = new LoginDalComandos();
-            tem = loginDal.verificarLogin(login, senha);
+            LoginDAOComandos loginDAO = new LoginDAOComandos();
+            tem = loginDAO.verificarLogin(login, senha);
 
-            if (!loginDal.mensagem.msg.Equals(""))
-                this.mensagem = loginDal.mensagem.msg;
+            if (!loginDAO.mensagem.msg.Equals(""))
+                this.mensagem = loginDAO.mensagem.msg;
 
             return tem;
         }
 
         public String cadastrar(String email, String senha, String confSenha)
         {
-            LoginDalComandos loginDal = new LoginDalComandos();
-            mensagem = loginDal.cadastrar(email, senha, confSenha);
+            LoginDAOComandos loginDAO = new LoginDAOComandos();
+            mensagem = loginDAO.cadastrar(email, senha, confSenha);
 
-            if (loginDal.tem)
+            if (loginDAO.tem)
                 this.tem = true;
 
             return mensagem;
@@ -35,14 +35,14 @@ namespace Sistema_Login.Modelo
 
         public DataTable atualizarExibicao()
         {
-            LoginDalComandos loginDal = new LoginDalComandos();
+            LoginDAOComandos loginDAO = new LoginDAOComandos();
 
-            return loginDal.GetTodosRegistros();
+            return loginDAO.GetTodosRegistros();
         }
 
         public String inserirPessoa(RadioButton masc, RadioButton fem, RadioButton oth, String txtNomeFiltro, String txtEmailFiltro, String txtCpf)
         {
-            LoginDalComandos loginDal = new LoginDalComandos();
+            LoginDAOComandos loginDAO = new LoginDAOComandos();
 
             String sexo = "";
             if (masc.Checked)
@@ -54,19 +54,19 @@ namespace Sistema_Login.Modelo
             if (oth.Checked)
                 sexo = "O";
 
-            return loginDal.InserirRegistros(txtNomeFiltro, txtEmailFiltro, txtCpf, sexo);
+            return loginDAO.InserirRegistros(txtNomeFiltro, txtEmailFiltro, txtCpf, sexo);
         }
 
         public String deletarPessoa(String CPF)
         {
-            LoginDalComandos loginDal = new LoginDalComandos();
+            LoginDAOComandos loginDAO = new LoginDAOComandos();
 
-            return loginDal.DeletarRegistro(CPF);
+            return loginDAO.DeletarRegistro(CPF);
         }
 
         public DataTable filtrarPessoa(RadioButton masc, RadioButton fem, RadioButton oth, String txtNomeFiltro, String txtEmailFiltro, String txtCpf)
         {
-            LoginDalComandos loginDal = new LoginDalComandos();
+            LoginDAOComandos loginDAO = new LoginDAOComandos();
 
             String sexo = "";
             if (masc.Checked)
@@ -78,15 +78,15 @@ namespace Sistema_Login.Modelo
             if (oth.Checked)
                 sexo = "O";
 
-            return loginDal.GetTodosRegistrosFiltrados(txtNomeFiltro, txtEmailFiltro, txtCpf, sexo);
+            return loginDAO.GetTodosRegistrosFiltrados(txtNomeFiltro, txtEmailFiltro, txtCpf, sexo);
         }
 
         public String about(String cpf)
         {
            
-            LoginDalComandos loginDal = new LoginDalComandos();
+            LoginDAOComandos loginDAO = new LoginDAOComandos();
             
-            return loginDal.requisicaoHTTP(cpf);  
+            return loginDAO.requisicaoHTTP(cpf);  
         }
     }
 }

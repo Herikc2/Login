@@ -2,14 +2,12 @@
 using System.IO;
 using System;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 using Sistema_Login.Modelo;
-using System.Text;
 using System.Collections.Generic;
 
 namespace Sistema_Login.Apresentacao
 {
-    partial class WebTest 
+    partial class requisicaoHTTP 
     {
 
         public void requisicaoGET(string cpf)

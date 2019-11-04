@@ -1,5 +1,4 @@
-﻿using Sistema_Login.DAL;
-using Sistema_Login.Modelo;
+﻿using Sistema_Login.Modelo;
 using System;
 using System.Windows.Forms;
 

@@ -70,5 +70,3 @@ C:\Users\ASUS\Source\Repos\Herikc2\Login\Sistema_Login\obj\Debug\Sistema_Login.e
 C:\Users\ASUS\Source\Repos\Herikc2\Login\Sistema_Login\obj\Debug\Sistema_Login.pdb
 C:\Users\ASUS\Source\Repos\Herikc2\Login\Sistema_Login\bin\Debug\Newtonsoft.Json.dll
 C:\Users\ASUS\Source\Repos\Herikc2\Login\Sistema_Login\bin\Debug\Newtonsoft.Json.xml
-C:\Users\ASUS\Source\Repos\Herikc2\Login\Sistema_Login\bin\Debug\Facebook.dll
-C:\Users\ASUS\Source\Repos\Herikc2\Login\Sistema_Login\bin\Debug\Facebook.xml

@@ -15,16 +15,6 @@ namespace Sistema_Login.Apresentacao
             InitializeComponent();
         }
 
-        private void lblSenha_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblConfSenha_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Controle controle = new Controle();
@@ -45,29 +35,10 @@ namespace Sistema_Login.Apresentacao
             }
         }
 
-        private void txtSenha_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CadastreSe_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblForcaSenha_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPontosSenha_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

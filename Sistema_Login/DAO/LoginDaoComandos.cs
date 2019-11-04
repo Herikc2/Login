@@ -6,9 +6,9 @@ using Sistema_Login.Apresentacao;
 using Sistema_Login.Modelo;
 using Sistema_Login.Modelo.Validacoes;
 
-namespace Sistema_Login.DAL
+namespace Sistema_Login.DAO
 {
-    class LoginDalComandos
+    class LoginDAOComandos
     {
         public bool tem;
         public Mensagem mensagem = new Mensagem();
@@ -429,7 +429,7 @@ namespace Sistema_Login.DAL
         public String requisicaoHTTP(string cpf)
         {
             Validacoes valida = new Validacoes();
-            WebTest web = new WebTest();
+            requisicaoHTTP web = new requisicaoHTTP();
 
             mensagem.msg = "";
             if (verificaExistenciaCPF(cpf).Equals("Já possui um Usuário com Esse CPF")) { 

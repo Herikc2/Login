@@ -75,9 +75,6 @@
     <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
     </Reference>
-    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
-      <HintPath>..\packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -145,7 +142,7 @@
     </Compile>
     <Compile Include="Modelo\Requisicao.cs" />
     <Compile Include="Modelo\Validacoes\validaCPF.cs" />
-    <Compile Include="Modelo\WebTest.cs" />
+    <Compile Include="Modelo\requisicaoHTTP.cs" />
     <Compile Include="DAO\Conexao.cs" />
     <Compile Include="DAO\LoginDaoComandos.cs" />
     <Compile Include="Modelo\Controle.cs" />
